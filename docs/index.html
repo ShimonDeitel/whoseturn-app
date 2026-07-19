@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whoseturn - Chore Wheel</title>
+<style>
+  :root {
+    --cream: #fff7ec;
+    --ink: #382e28;
+    --marigold: #f5a330;
+    --coral: #f26c4d;
+    --sage: #70a37d;
+    --plum: #8c5e82;
+    --sand: #ede0be;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  header {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 64px 24px 24px;
+    text-align: center;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 12px;
+  }
+  .tagline {
+    font-size: 1.2rem;
+    color: rgba(56,46,40,0.75);
+    max-width: 560px;
+    margin: 0 auto 40px;
+  }
+  .wheel-demo {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 48px;
+  }
+  .wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--marigold) 0deg 60deg,
+      var(--coral) 60deg 120deg,
+      var(--sage) 120deg 180deg,
+      var(--plum) 180deg 240deg,
+      #d98c40 240deg 300deg,
+      #cc546b 300deg 360deg
+    );
+    border: 6px solid var(--ink);
+    animation: spin 6s cubic-bezier(0.15, 0.85, 0.35, 1) infinite;
+  }
+  .hub {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 20%; height: 20%;
+    background: var(--cream);
+    border: 5px solid var(--ink);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .pointer {
+    position: absolute;
+    top: -18px; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 28px solid var(--ink);
+  }
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    60%  { transform: rotate(1080deg); }
+    100% { transform: rotate(1440deg); }
+  }
+  section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .feature {
+    background: var(--sand);
+    border-radius: 18px;
+    padding: 20px;
+  }
+  .feature h3 { margin-top: 0; color: var(--plum); }
+  .cta {
+    text-align: center;
+    padding: 48px 24px 80px;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--coral);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 0.85rem;
+    color: rgba(56,46,40,0.6);
+  }
+  footer a { color: var(--plum); }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Whoseturn - Chore Wheel</h1>
+    <p class="tagline">The fair way to decide whose turn it is. Spin a real wheel — no more arguing about dishes, trash night, or who picks the movie.</p>
+    <div class="wheel-demo">
+      <div class="wheel"></div>
+      <div class="hub"></div>
+      <div class="pointer"></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="features">
+      <div class="feature">
+        <h3>Self-balancing fairness</h3>
+        <p>The wheel remembers how long it's been since each person had a turn and quietly weights the odds toward whoever's most overdue — while never picking the same person twice in a row.</p>
+      </div>
+      <div class="feature">
+        <h3>Any rotation, any size household</h3>
+        <p>Dishes, trash, walking the dog, picking tonight's movie — create a wheel for anything your household needs to share fairly.</p>
+      </div>
+      <div class="feature">
+        <h3>Private by design</h3>
+        <p>Everything stays on your device. No account, no ads, no data ever leaves your phone.</p>
+      </div>
+      <div class="feature">
+        <h3>Whoseturn Pro</h3>
+        <p>Unlimited wheels and participants, custom icons per wheel, and spin history so you can prove whose turn it really was.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <a class="badge" href="https://apps.apple.com">Coming soon to the App Store</a>
+  </div>
+
+  <footer>
+    <p><a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Use</a></p>
+    <p>&copy; 2026 Whoseturn</p>
+  </footer>
+</body>
+</html>

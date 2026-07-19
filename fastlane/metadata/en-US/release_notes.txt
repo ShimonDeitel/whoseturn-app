@@ -1,0 +1,1 @@
+Whoseturn 1.0 — the fair way to decide whose turn it is. Add participants, spin the wheel, and let a self-balancing fairness algorithm handle the rest.

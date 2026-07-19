@@ -1,0 +1,19 @@
+Whoseturn turns "whose turn is it?" into a satisfying spin instead of a household argument.
+
+Add everyone who shares a chore or a decision, name a wheel for it — Dishes, Trash Night, Who Picks the Movie, Walk the Dog — and give it a spin. A pointer ticks past each name as the wheel slows down, then settles with a satisfying clunk on whoever's turn it is.
+
+Under the hood, the wheel isn't just random: it remembers how long it's been since each person had a turn and quietly weights the odds toward whoever's most overdue, while never picking the same person twice in a row. Over time, everyone gets a fair share without anyone having to keep score.
+
+FREE
+- 1 wheel
+- Up to 4 participants
+
+WHOSETURN PRO (monthly subscription)
+- Unlimited wheels
+- Unlimited participants per wheel
+- Custom icon for every wheel
+- Spin history and fairness stats, so you can actually prove whose turn it was
+
+Whoseturn works completely offline. Everything you add — wheels, names, spin history — stays stored only on your device. Nothing is uploaded, no account required, no ads.
+
+Subscriptions are billed monthly to your Apple ID and renew automatically unless cancelled at least 24 hours before the end of the current period. Manage or cancel anytime in your Apple ID account settings.
