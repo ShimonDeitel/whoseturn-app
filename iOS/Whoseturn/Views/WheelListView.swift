@@ -32,17 +32,23 @@ struct WheelListView: View {
             }
         }
         .safeAreaInset(edge: .bottom) {
-            Button {
-                if store.canAddWheel {
-                    showAddWheel = true
-                } else {
-                    showPaywall = true
+            VStack(spacing: 12) {
+                if AdsManager.adsEnabled(isPro: entitlements.isPro) {
+                    HouseBannerView()
                 }
-            } label: {
-                Label("New Wheel", systemImage: "plus.circle.fill")
+                Button {
+                    if store.canAddWheel {
+                        showAddWheel = true
+                    } else {
+                        showPaywall = true
+                    }
+                } label: {
+                    Label("New Wheel", systemImage: "plus.circle.fill")
+                }
+                .buttonStyle(WTButtonStyle(background: WTColor.marigold))
+                .padding(.horizontal)
             }
-            .buttonStyle(WTButtonStyle(background: WTColor.marigold))
-            .padding()
+            .padding(.vertical, 8)
         }
         .sheet(isPresented: $showAddWheel) { AddWheelSheet() }
         .sheet(isPresented: $showPaywall) { PaywallView() }
