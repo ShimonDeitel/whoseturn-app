@@ -38,6 +38,12 @@ struct SettingsView: View {
                             .font(WTFont.body(13))
                             .foregroundStyle(WTColor.ink.opacity(0.6))
                     }
+
+                    Section("More Apps") {
+                        ForEach(MoreApps.others(than: "Whoseturn - Chore Wheel")) { app in
+                            Link(app.name, destination: app.url)
+                        }
+                    }
                 }
                 .scrollContentBackground(.hidden)
             }

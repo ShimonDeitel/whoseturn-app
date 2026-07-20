@@ -20,7 +20,33 @@ final class WhoseturnStore: ObservableObject {
             self.fileURL = documents.appendingPathComponent("whoseturn_data.json")
         }
         self.data = WhoseturnStore.load(from: self.fileURL) ?? WhoseturnData()
+        #if DEBUG
+        if ProcessInfo.processInfo.environment["WHOSETURN_SEED_SCREENSHOTS"] == "1", data.wheels.isEmpty {
+            seedScreenshotData()
+        }
+        #endif
     }
+
+    #if DEBUG
+    private func seedScreenshotData() {
+        var dishes = Wheel(name: "Dishes", iconSymbolName: "fork.knife")
+        dishes.participants = [
+            Participant(name: "Mom"), Participant(name: "Dad"),
+            Participant(name: "Sam"), Participant(name: "Jules"),
+        ]
+        dishes.lastPickedID = dishes.participants[1].id
+        data.wheels = [
+            dishes,
+            Wheel(name: "Trash & Recycling",
+                  participants: [Participant(name: "Mom"), Participant(name: "Dad"), Participant(name: "Sam")],
+                  iconSymbolName: "trash"),
+            Wheel(name: "Movie Night Pick",
+                  participants: [Participant(name: "Sam"), Participant(name: "Jules")],
+                  iconSymbolName: "popcorn"),
+        ]
+        persist()
+    }
+    #endif
 
     // MARK: Loading / saving
 
