@@ -33,9 +33,6 @@ struct WheelListView: View {
         }
         .safeAreaInset(edge: .bottom) {
             VStack(spacing: 12) {
-                if AdsManager.adsEnabled(isPro: entitlements.isPro) {
-                    HouseBannerView()
-                }
                 Button {
                     if store.canAddWheel {
                         showAddWheel = true
